@@ -47,18 +47,14 @@ def load_model_artifacts():
 
 model, label_encoder, features, scaler = load_model_artifacts()
 
-# --- Input Features (Placeholder) ---
+# Input Features (Placeholder)
 st.header('Enter Network Traffic Features')
-st.write('For a real application, you would add input widgets here for each feature.')
+# st.write('For a real application, you would add input widgets here for each feature.')
 st.write('---')
 
-# This is a placeholder for demonstration. In a real app, you'd collect actual feature values.
-# You might use st.number_input, st.selectbox, etc. for each of the `features` loaded.
-# For now, let's create a dummy input based on the first few features.
 
 input_data = {}
-# You should dynamically create input widgets for each feature in the `features` list
-# For simplicity, let's create dummy values for the first 5 features
+# For simplicity, dummy values are created for the first 5 features
 
 st.subheader('Example Input (replace with actual widgets):')
 for i, feature_name in enumerate(features[:5]): # Only showing first 5 for brevity
@@ -77,7 +73,7 @@ input_df = pd.DataFrame([input_data])
 st.subheader('Input Data Preview:')
 st.dataframe(input_df)
 
-# --- Prediction ---
+# Prediction 
 if st.button('Predict Intrusion'):
     try:
         # Ensure the input DataFrame has columns in the same order as trained features
@@ -109,4 +105,4 @@ if st.button('Predict Intrusion'):
         st.error(f'An error occurred during prediction: {e}')
 
 st.write('---')
-st.info('This is a basic template. You will need to customize the input widgets and potentially the preprocessing logic to match your specific model and features.')
+st.info('COM 763: Palitha Kuruvita / 25026175')
