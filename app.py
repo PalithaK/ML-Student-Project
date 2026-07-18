@@ -48,8 +48,8 @@ def load_model_artifacts():
 model, label_encoder, features, scaler = load_model_artifacts()
 
 # --- Input Features ---
-st.markdown('<h4 style="color:#4682B4 ; margin-bottom: 0px;">Enter Network Traffic Features</h2>', unsafe_allow_html=True)
-st.markdown('<p style="color:#ADD8E6; margin-top: 0px;"> (Adjust the sliders below for each feature to generate a prediction):</p>', unsafe_allow_html=True)
+st.markdown('<h4 style="color: #ADD8E6; display: inline;">Enter Network Traffic Features</h4> <span style="color: #4682B4;">[Adjust the sliders below for each feature to generate a prediction:]</span>', unsafe_allow_html=True)
+# st.markdown('<p style="color:#ADD8E6; margin-top: 0px;"> (Adjust the sliders below for each feature to generate a prediction):</p>', unsafe_allow_html=True)
 # st.header('Enter Network Traffic Features')
 # st.markdown('<h4 style="color: #FF7F7F; margin-bottom: 0px;">Enter Network Traffic Features </h2>',unsafe_allow_html=True) 
 # st.markdown('<p  margin-top: 0px;">Adjust the sliders below for each feature then generate a prediction:</p>', unsafe_allow_html=True)
