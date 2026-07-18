@@ -49,7 +49,7 @@ num_columns = 4 # Number of columns for input fields
 columns = st.columns(num_columns)
 
 # Pre-fill with example values or zeros/means for demonstration
-# In a real application, you might use means/medians from your training data
+
 example_values = {
     ' Destination Port': 80,
     ' Flow Duration': 3000000,
@@ -86,7 +86,7 @@ for i, feature_name in enumerate(dataset_feature_names):
 
 st.markdown("--- ")
 
-if st.button("⚡ Analyze Traffic"): # Custom button styling possible with CSS
+if st.button("⚡ Analyze Traffic"): 
     # Convert input data to DataFrame
     input_df = pd.DataFrame([input_feature_values])
 
@@ -110,7 +110,7 @@ if st.button("⚡ Analyze Traffic"): # Custom button styling possible with CSS
         ]
         if any(model_type in str(type(ml_model)) for model_type in scaled_models):
             processed_input_data = data_scaler.transform(input_df)
-            st.sidebar.info("Input data scaled for prediction.") # Use sidebar for less intrusive messages
+            st.sidebar.info("Input data scaled for prediction.") 
         else:
             st.sidebar.info("Model does not require scaling. Proceeding with unscaled data.")
 
@@ -141,4 +141,4 @@ if st.button("⚡ Analyze Traffic"): # Custom button styling possible with CSS
 
 st.markdown("--- ")
 st.caption("Developed as part of COM 763: Network Intrusion Detection using Machine Learning")
-st.markdown("For more information, please refer to the project documentation.")
+st.markdown("Student ID: 25026175 / Palitha Kuruvita.")
