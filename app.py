@@ -106,5 +106,5 @@ if st.button('Predict Intrusion'):
         st.error(f'An error occurred during prediction: {e}')
 
 st.write('---')
-st.info('This is a basic template. You will need to customize the input widgets and potentially the preprocessing logic to match your specific model and features.')
+st.info('COM 763 : Palitha Kuruvita / 25026175')
 
