@@ -49,7 +49,7 @@ model, label_encoder, features, scaler = load_model_artifacts()
 
 # --- Input Features ---
 # st.header('Enter Network Traffic Features')
-st.markdown('<h2 style="color: #FF4B4B;">Enter Network Traffic Features</h2>', unsafe_allow_html=True)
+st.markdown('<h4 style="color: #FF4B4B;">Enter Network Traffic Features</h2>', unsafe_allow_html=True)
 st.markdown('<p style="color: #ADD8E6;">Adjust the sliders below for each feature to generate a prediction:</p>', unsafe_allow_html=True)
 # st.write('Adjust the sliders below for each feature to generate a prediction:')
 st.write('---')
