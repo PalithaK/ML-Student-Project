@@ -47,13 +47,8 @@ def load_model_artifacts():
 
 model, label_encoder, features, scaler = load_model_artifacts()
 
-# --- Input Features ---
+# Input Features
 st.markdown('<h4 style="color:#4682B4; display: inline;">Enter Network Traffic Features</h4> <span style="color:#4682B4;">[Adjust the sliders below for each feature and click "Predict Intrusion" button]</span>', unsafe_allow_html=True)
-# st.markdown('<p style="color:#ADD8E6; margin-top: 0px;"> (Adjust the sliders below for each feature to generate a prediction):</p>', unsafe_allow_html=True)
-# st.header('Enter Network Traffic Features')
-# st.markdown('<h4 style="color: #FF7F7F; margin-bottom: 0px;">Enter Network Traffic Features </h2>',unsafe_allow_html=True) 
-# st.markdown('<p  margin-top: 0px;">Adjust the sliders below for each feature then generate a prediction:</p>', unsafe_allow_html=True)
-# st.write('Adjust the sliders below for each feature to generate a prediction:')
 st.write('---')
 
 input_data = {}
@@ -62,10 +57,7 @@ cols = st.columns(4)
 
 for i, feature_name in enumerate(features):
     with cols[i % 4]: # Place each slider in a column, cycling through the 4 columns
-        # Using st.slider for numerical features.
-        # You might need to adjust min_value, max_value, and default value based on your dataset's specifics.
-        # For demonstration, setting a generic range. It's best to set these based on actual feature ranges.
-        input_data[feature_name] = st.slider(
+            input_data[feature_name] = st.slider(
             f'Input for {feature_name}',
             min_value=0.0,
             max_value=1000.0, # A generic max, adjust if you know actual maxes
@@ -76,7 +68,7 @@ for i, feature_name in enumerate(features):
 
 input_df = pd.DataFrame([input_data])
 
-# --- Prediction ---
+# Prediction 
 if st.button('Predict Intrusion'):
     try:
         # Ensure the input DataFrame has columns in the same order as trained features
