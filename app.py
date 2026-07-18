@@ -35,7 +35,7 @@ ml_model, target_label_encoder, dataset_feature_names, data_scaler = load_ml_art
 
 # --- Streamlit UI Elements ---
 st.title("🕵️‍♂️ Network Intrusion Detection System")
-st.markdown("Welcome! This application predicts network traffic behavior (Benign or DDoS) based on various network features.")
+st.markdown("Welcome! This application predicts network traffic behavior based on various network features.")
 st.markdown("---")
 
 st.subheader("Enter Network Traffic Features")
