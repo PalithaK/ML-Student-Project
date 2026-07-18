@@ -7,7 +7,7 @@ import os
 
 st.set_page_config(layout='wide')
 
-st.title('Network Intrusion Detection System')
+st.title('🛡️ Network Intrusion Detection System')
 st.write('This application uses a pre-trained machine learning model to detect network intrusions.')
 
 # --- Load Model Artifacts ---
