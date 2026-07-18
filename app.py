@@ -49,27 +49,28 @@ model, label_encoder, features, scaler = load_model_artifacts()
 
 # --- Input Features ---
 st.header('Enter Network Traffic Features')
-st.write('Please provide values for each of the features below:')
+st.write('Adjust the sliders below for each feature to generate a prediction:')
 st.write('---')
 
 input_data = {}
-# Create a number input widget for each feature
+# Create a 4-column layout for sliders
+cols = st.columns(4)
+
 for i, feature_name in enumerate(features):
-    # Using st.number_input for numerical features. 
-    # You might need to adjust min_value, max_value, and default value based on your dataset's specifics.
-    input_data[feature_name] = st.number_input(
-        f'Input for {feature_name}',
-        min_value=0.0, # Assuming most network features are non-negative
-        max_value=1e9, # A large upper bound, adjust if you know feature maxes
-        value=0.0, # Default value
-        step=0.1, # Step size for the input
-        key=f'input_{i}'
-    )
+    with cols[i % 4]: # Place each slider in a column, cycling through the 4 columns
+        # Using st.slider for numerical features.
+        # You might need to adjust min_value, max_value, and default value based on your dataset's specifics.
+        # For demonstration, setting a generic range. It's best to set these based on actual feature ranges.
+        input_data[feature_name] = st.slider(
+            f'Input for {feature_name}',
+            min_value=0.0,
+            max_value=1000.0, # A generic max, adjust if you know actual maxes
+            value=0.0, # Default starting value
+            step=0.1, # Step size for the slider
+            key=f'slider_{i}'
+        )
 
 input_df = pd.DataFrame([input_data])
-
-st.subheader('Input Data Preview:')
-st.dataframe(input_df)
 
 # --- Prediction ---
 if st.button('Predict Intrusion'):
@@ -104,3 +105,4 @@ if st.button('Predict Intrusion'):
 
 st.write('---')
 st.info('This is a basic template. You will need to customize the input widgets and potentially the preprocessing logic to match your specific model and features.')
+
