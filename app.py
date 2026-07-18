@@ -140,5 +140,5 @@ if st.button("⚡ Analyze Traffic"):
         st.write("Please check the input values and ensure the model and data are compatible.")
 
 st.markdown("--- ")
-st.caption("Developed as part of COM 763: Network Intrusion Detection using Machine Learning")
-st.markdown("Student ID: 25026175 / Palitha Kuruvita.")
+st.caption("COM 763 Assignment 01 : 25026175 / Palitha Kuruvita")
+
